@@ -8,7 +8,7 @@ function pluginFromEnvironment () {
   const secret = require('crypto').randomBytes(16).toString('hex')
   const credentials = process.env.ILP_CREDENTIALS
     ? JSON.parse(process.env.ILP_CREDENTIALS)
-    : { server: `btp+ws://:${secret}@localhost:7768` }
+    : { server: `btp+wss://:${secret}@amundsen.ilpdemo.org:1801` }
 
   debug('creating plugin with module', module)
   const Plugin = require(module)
