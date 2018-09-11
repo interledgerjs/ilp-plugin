@@ -44,6 +44,18 @@ jobs:
           command: npm install
      
       - run:
+          name: Lint
+          command: npm run lint
+     
+      - run:
+          name: Test
+          command: npm test
+     
+      - run: 
+          name: Upload Test Coverage to codecov.io
+          command: npm run codecov
+     
+      - run:
           name: Upload Lockfile (Greenkeeper)
           command: greenkeeper-lockfile-upload
 
