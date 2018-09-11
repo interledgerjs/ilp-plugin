@@ -55,4 +55,4 @@ The Environment variables that can be set are:
 `ILP_PLUGIN` : The name/path of the plugin module
 `ILP_PLUGIN_OPTIONS` : The options passed to the constructor, serialized as a JSON object.
 
-The options object passed to `createPlugin` is a subset of the account configuration object proveded to `ilp-connector`.
+The options object passed is a subset of the account configuration object proveded to `ilp-connector`.
