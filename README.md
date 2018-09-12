@@ -48,11 +48,11 @@ async function run () {
 run()
 ```
 
-If no parameters are provided it will attempt to find the config in environment variables. If these are not found it will load a plugin that attempts to connect to a local moneyd instance on port 7768.
+If no parameters are provided it will attempt to find the config in environment variables. If these are not found it will load a plugin that attempts to connect to a local [moneyd](../moneyd) instance on port 7768.
 
 The Environment variables that can be set are:
 
-`ILP_PLUGIN` : The name/path of the plugin module
-`ILP_PLUGIN_OPTIONS` : The options passed to the constructor, serialized as a JSON object.
+ - `ILP_PLUGIN` : The name/path of the plugin module
+ - `ILP_PLUGIN_OPTIONS` : The options passed to the constructor, serialized as a JSON object.
 
 The options object passed is a subset of the account configuration object proveded to `ilp-connector`.
