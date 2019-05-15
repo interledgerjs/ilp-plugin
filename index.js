@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const log = require('ilp-logger')('ilp-plugin')
 const crypto = require('crypto')
+const URL = require('url').URL
 
 function pluginFromEnvironment (opts) {
   const module = process.env.ILP_PLUGIN || 'ilp-plugin-btp'
@@ -20,9 +21,13 @@ function generateCredentials (opts) {
 
   const secret = require('crypto').randomBytes(16).toString('hex')
   const name = (opts && opts.name) || ''
-  const server = process.env.ILP_BTP_SERVER || 'localhost:7768'
 
-  return { server: `btp+ws://${name}:${secret}@${server}` }
+  if (process.env.ILP_BTP_SERVER) {
+    const url = new URL(process.env.ILP_BTP_SERVER)
+    return { server: `${url.protocol}//${name}:${secret}@${url.host}` }
+  }
+
+  return { server: `btp+ws://${name}:${secret}@$localhost:7768` }
 }
 
 module.exports = pluginFromEnvironment
