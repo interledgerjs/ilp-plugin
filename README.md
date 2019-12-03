@@ -1,4 +1,4 @@
-# ILP Plugin
+# ILP Plugin - Moved to https://github.com/interledgerjs/interledgerjs
 > A generic handle to ILP
 
 [![NPM Package](https://img.shields.io/npm/v/ilp-plugin.svg?style=flat)](https://npmjs.org/package/ilp-plugin)
